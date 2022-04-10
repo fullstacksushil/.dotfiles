@@ -5,6 +5,31 @@
 # alias snth="setxkbmap us"
 alias xsc="xclip -selection clipboard"
 
+alias q='exit'
+alias c='clear'
+alias h='history'
+alias cs='clear;ls'
+alias p='cat'
+alias pd='pwd'
+alias lsa='ls -a'
+alias lsl='ls -l'
+alias pd='pwd'
+alias t='time'
+alias k='kill'
+alias null='/dev/null'
+alias home='cd ~'
+alias root='cd /'
+alias o=open
+alias ..='cd ..'
+alias ...='cd ..; cd ..'
+alias ....='cd ..; cd ..; cd ..'
+alias python='python3'
+alias pip='pip3'
+# Shortcuts to vimrc and bashrc
+alias vimrc='nvim ~/.vimrc'
+alias bashrc='nvim ~/.bashrc'
+alias loadbash='source ~/.bashrc'
+
 #!/usr/bin/env bash
 # alias esc="$HOME/.config/sway/config"
 alias vim="$VIM"
