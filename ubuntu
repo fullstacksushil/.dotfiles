@@ -1,10 +1,8 @@
 #!/usr/bin/env zsh
-echo $PWD
-echo $USER
 
 mv $HOME/.zshrc $HOME/.zshrc.bak
 # mv $HOME/.zsh_profile $HOME/.zsh_profile.bak
-rm $HOME/.zshrc 
+# rm $HOME/.zshrc 
 
 
 if [[ -z $STOW_FOLDERS ]]; then
