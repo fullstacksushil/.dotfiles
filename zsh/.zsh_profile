@@ -4,15 +4,15 @@ export GREP_OPTIONS=' — color=auto'
 # Set Vim as my default editor
 
 
-# export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME=$HOME/.config
 VIM="nvim"
-# PERSONAL=$XDG_CONFIG_HOME/personal
-# source $PERSONAL/env
-# for i in `find -L $PERSONAL`; do
-#     source $i
-# done
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+PERSONAL=$XDG_CONFIG_HOME/personal
+source $PERSONAL/env
+for i in `find -L $PERSONAL`; do
+    source $i
+done
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/completion.zsh
 
 export CC="clang-12"
 export CXX="clang++-12"
@@ -24,10 +24,10 @@ export DENO_INSTALL="$HOME/.deno"
 export N_PREFIX="$HOME/.local/n"
 export DOTFILES=$HOME/.dotfiles
 
-addToPathFront $HOME/.local/.npm-global/bin
-addToPathFront $HOME/.local/n/bin/
-addToPathFront $HOME/.local/go/bin
-addToPathFront $HOME/go/bin
+# addToPathFront $HOME/.local/.npm-global/bin
+# addToPathFront $HOME/.local/n/bin/
+# addToPathFront $HOME/.local/go/bin
+# addToPathFront $HOME/go/bin
 
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
