@@ -28,6 +28,7 @@ addToPathFront $HOME/.local/.npm-global/bin
 addToPathFront $HOME/.local/n/bin/
 addToPathFront $HOME/.local/go/bin
 addToPathFront $HOME/go/bin
+addToPathFront $HOME/.local/bin
 
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
