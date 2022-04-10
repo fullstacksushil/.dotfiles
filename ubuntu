@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 mv $HOME/.zshrc $HOME/.zshrc.bak
+chmod +x bin/.local/bin/*
 # mv $HOME/.zsh_profile $HOME/.zsh_profile.bak
 # rm $HOME/.zshrc 
 
