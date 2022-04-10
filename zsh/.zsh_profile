@@ -1,30 +1,51 @@
-export XDG_CONFIG_HOME=$HOME/.config
-VIM="nvim"
+alias q='exit'
+alias c='clear'
+alias h='history'
+alias cs='clear;ls'
+alias p='cat'
+alias pd='pwd'
+alias lsa='ls -a'
+alias lsl='ls -l'
+alias pd='pwd'
+alias t='time'
+alias k='kill'
+alias null='/dev/null'
+alias home='cd ~'
+alias root='cd /'
+alias o=open
+alias ..='cd ..'
+alias ...='cd ..; cd ..'
+alias ....='cd ..; cd ..; cd ..'
+alias python='python3'
+alias pip='pip3'
+# Shortcuts to vimrc and bashrc
+alias vimrc='nvim ~/.vimrc'
+alias bashrc='nvim ~/.bashrc'
+alias loadbash='source ~/.bashrc'
+# Let there be color in grep!
+export GREP_OPTIONS=' — color=auto'
+# Set Vim as my default editor
 
-PERSONAL=$XDG_CONFIG_HOME/personal
-source $PERSONAL/env
-for i in `find -L $PERSONAL`; do
-    source $i
-done
+
+# export XDG_CONFIG_HOME=$HOME/.config
+VIM="nvim"
+# PERSONAL=$XDG_CONFIG_HOME/personal
+# source $PERSONAL/env
+# for i in `find -L $PERSONAL`; do
+#     source $i
+# done
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
-export NRDP="$HOME/work/nrdp"
-export NRDP_BUILDS="$HOME/work/builds"
 export CC="clang-12"
 export CXX="clang++-12"
 export PYTHONBREAKPOINT="pudb.set_trace"
 export GOPATH=$HOME/go
-export DARWINS_DIR="$HOME/work/darwins"
-export TVUI="$HOME/work/tvui"
-export API_TOOLS=$HOME/work/tools/edge/scripts
 export GIT_EDITOR=$VIM
-export EOSIO_INSTALL_DIR=$HOME/personal/eos
-export NF_IDFILE=$HOME/.idfile
+export EDITOR=$VIM
 export DENO_INSTALL="$HOME/.deno"
 export N_PREFIX="$HOME/.local/n"
 export DOTFILES=$HOME/.dotfiles
-export BOGART=$HOME/work/bogart
 
 addToPathFront $HOME/.local/.npm-global/bin
 addToPathFront $HOME/.local/n/bin/
@@ -50,21 +71,7 @@ goPersonal() {
     cp ~/.npm_personal_rc ~/.npmrc
 }
 
-addThrottle() {
-    local kbs="kbps"
-    echo $kbs
-    echo "About to throttle to $1 $kbs"
-    echo "sudo tc qdisc add dev wlp59s0 handle 1: root htb default 11"
-    echo "sudo tc class add dev wlp59s0 parent 1: classid 1:1 htb rate $1$kbs"
-    echo "sudo tc class add dev wlp59s0 parent 1:1 classid 1:11 htb rate $1$kbs"
-    sudo tc qdisc add dev wlp59s0 handle 1: root htb default 11
-    sudo tc class add dev wlp59s0 parent 1: classid 1:1 htb rate $1$kbs
-    sudo tc class add dev wlp59s0 parent 1:1 classid 1:11 htb rate $1$kbs
-}
 
-removeThrottle() {
-    sudo tc qdisc del dev wlp59s0 root
-}
 
 cat1Line() {
     cat $1 | tr -d "\n"
